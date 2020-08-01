@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Lista de tareas para las cosas que tengas que hacer en tu dia a dia">
+    <meta name="keywords" content="tareas, lista, horarios, responsabilidades">
+    <meta name="author" content="Mateo Di Giusto">
+    <meta name="copyright" content="Mateo Inc.">
+    <link rel="shortcut icon" href="assets\img\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets\img\favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Quehaceres</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <h1 class="text-center mb-5">Tu lista de tareas</h1>
+        </header>
+        
+        <div id="app" class="row contenido justify-content-center">
+            <div class="col-md-5" id="contenedor-formulario">
+                <section>
+                    <p class="lead">Ingresa las cosas que tengas que hacer en el dia o en la semana</p>
+        
+                    <form action="" v-on:submit.prevent="guardarTareas">
+                        <div class="form-group">
+                            <label for="tarea">Ingresa tu tarea, horario en que la haras, etc:</label>
+                            <input type="text" class="form-control" placeholder="Tarea" v-model="nombreTarea" required>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value ="Agendar"class="btn">
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="col-md-5  offset-md-1" id="contenedor-lista">
+                <section>
+                    <p class="lead">Esto tenes por hacer hoy:</p>
+                    <ul>
+                        <li class="list-group-item mt-1" v-for="tarea in tareas">
+                            {{tarea}} 
+                        <button v-on:click="eliminarTarea"class="badge badge-pill borrar">
+                            X
+                        </button>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <footer class="text-center">
+            © Mateo Di Giusto
+        </footer>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="./assets/js/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>

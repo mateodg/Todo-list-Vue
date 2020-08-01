@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:  0;
+    font-family: 'Anton', sans-serif;
+}
+body{
+    background: #A1C6EA;
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    text-decoration: underline;
+}
+#contenedor-formulario{
+    border: solid 5px rgb(60, 93, 182);
+    border-radius: 2%;
+    background: #FFF;
+}
+.btn {
+    border: solid 1px rgb(60, 93, 182);
+}
+#contenedor-lista{
+    border: solid 5px rgb(60, 93, 182);
+    border-radius: 2%;
+    background: #FFF;
+}
+.borrar{
+    color: red;
+    float: right;
+}
+footer{
+    border: solid 5px rgb(60, 93, 182);
+    border-radius: 2%;
+    background: #FFF;
+    align-self: flex-end;
+}
